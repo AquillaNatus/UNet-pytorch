@@ -131,6 +131,7 @@ class Utils(object):
             dest = os.path.join(self.stage1_train_dest, id_)
             img = Image.open(os.path.join(path, 'images', id_ + '.png')).convert("RGB")
             mask = self.assemble_masks(path)
+            os.mkdir(dest)
             img.save(os.path.join(dest, 'image.png'))
             Image.fromarray(mask).save(os.path.join(dest, 'mask.png'))
 
